@@ -64,7 +64,7 @@ body {
 }
 
 .hold {
-  border: 5px solid #eee;
+  border: 5px dashed #eee;
 }
 
 .hide {
@@ -72,5 +72,12 @@ body {
 }
 
 .hovered {
-  border-top: 2px solid blueviolet;
+  border-top: 2px solid #8ed7ed;
+  border-bottom: 2px solid #8ed7ed;
+  background-color: rgba(255, 133, 228, 0.2);
+  border-radius: 20px;
+}
+
+.dragging {
+  background: #9ddea6;
 }

@@ -18,24 +18,30 @@ function dragstart(event) {
     }
 
 function dragend(event) {
-    // console.log('drag end');
     event.target.className = 'item'
+    document.querySelector('.item').innerHTML = 'Тяни еще ☻'
+
 }
 
 function dragover(event) {
-    console.log('dragover');
-
+    event.preventDefault()
 }
+
 function dragenter(event) {
-    console.log('dragenter');
     event.target.classList.add('hovered')
-
 }
+
 function dragleave(event) {
-    console.log('dragleave');
-
+    event.target.classList.remove('hovered');
 }
-function dragdrop(event) {
-    console.log('dragdrop');
 
+function dragdrop(event) {
+    event.target.classList.remove('hovered');
+    event.target.append(item);
+}
+
+function dragstart(event) {
+    console.log(event.target);
+    event.target.classList.add('dragging')
+    document.querySelector('.item').innerHTML = 'Тяниииии'
 }
