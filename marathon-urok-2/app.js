@@ -19,7 +19,7 @@ function dragstart(event) {
 
 function dragend(event) {
     event.target.className = 'item'
-    document.querySelector('.item').innerHTML = 'Тяни еще ☻'
+    document.querySelector('.item').innerHTML = 'Тащи еще ☻'
 
 }
 
@@ -43,5 +43,6 @@ function dragdrop(event) {
 function dragstart(event) {
     console.log(event.target);
     event.target.classList.add('dragging')
-    document.querySelector('.item').innerHTML = 'Тяниииии'
+    document.querySelector('.item').innerHTML = 'Тащииии'
+    document.querySelector('.item').setAttribute('style', 'line-height: 43px')
 }
