@@ -25,7 +25,7 @@ timeList.addEventListener('click', event => {
         time = parseInt(event.target.getAttribute('data-time'));
     } else if (event.target.classList.contains('custom')) {
         let tmp = +prompt('Введите количество секунд: ');
-        if (tmp <= 0) {
+        if (tmp <= 0 || Number.isNaN(tmp)) {
             timeEl.parentNode.classList.add('hide');
             time = 0;
         }
