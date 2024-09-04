@@ -68,7 +68,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-.time-btn:hover {
+.time-btn:hover, .custom:hover {
   border: 2px solid #16d9e3;
   color: #16d9e3;
 }
