@@ -7,6 +7,9 @@ const timeList = document.querySelector('#time-list');
 
 const board = document.querySelector('#board');
 
+// цвета
+// const colors = []
+
 // время игры (3-й экран)
 let timeEl = document.querySelector('#time');
 // время игры из атрибута "data-time"
@@ -21,10 +24,17 @@ startBtn.addEventListener('click', (event) => {
 timeList.addEventListener('click', event => {
     if (event.target.classList.contains('time-btn')) {
         time = parseInt(event.target.getAttribute('data-time'));
-        screens[1].classList.add('up')
-        //    console.log(time);
-        startGame();
+    } else if (event.target.classList.contains('custom')) {
+        let tmp = +prompt('Введите количество секунд: ');
+        if (tmp <= 0) {
+            timeEl.parentNode.classList.add('hide');
+            time = 0;
+        }
+        else if (tmp < 10) time = `0${tmp}`
+        else time = tmp
     }
+    startGame();
+    screens[1].classList.add('up');
 })
 
 board.addEventListener('click', (event) => {
@@ -39,7 +49,9 @@ board.addEventListener('click', (event) => {
 
 function startGame() {
     setInterval(decreaseTime, 1000);
-    createRandomCircle();
+    if (time > 0) {
+        createRandomCircle();
+    }
     setTime(time);
 }
 

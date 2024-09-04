@@ -58,7 +58,7 @@ h1 {
   margin: 10px;
 }
 
-.time-btn {
+.time-btn, .custom {
   background-color: transparent;
   border: 2px solid #c0c0c0;
   color: #fff;
