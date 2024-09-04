@@ -7,8 +7,7 @@ const timeList = document.querySelector('#time-list');
 
 const board = document.querySelector('#board');
 
-// цвета
-// const colors = []
+const colors = ['#FFADAD', '#FFD6A5', '#FDFFB6', '#CAFFBF', '#9BF6FF', '#A0C4FF', '#BDB2FF', '#FFC6FF', '#FFFFFC'];
 
 // время игры (3-й экран)
 let timeEl = document.querySelector('#time');
@@ -81,18 +80,23 @@ function createRandomCircle() {
     const circle = document.createElement('div');
     circle.classList.add('circle');
     board.append(circle);
+
     // генерируем размер кружка
     const size = getRandomNumber(10, 60);
+
     // получаем размеры доски
     const {width, height} = board.getBoundingClientRect();
 
-    
     // размер кружка
     circle.style.width = `${size}px`;
     circle.style.height = `${size}px`;
+
     //положение кружка
     circle.style.top = `${getRandomNumber(0, height - size)}px`;
     circle.style.left = `${getRandomNumber(0, width - size)}px`;
+
+    // цвета кружков
+    circle.style.background = `${colors[getRandomNumber(0, colors.length)]}`
 }
 
 // для геренрации рандомных чисел в диапазоне от min до max
