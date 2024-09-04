@@ -22,8 +22,11 @@ startBtn.addEventListener('click', (event) => {
 
 timeList.addEventListener('click', event => {
     if (event.target.classList.contains('time-btn')) {
+        event.target.setAttribute('disabled', '');
         time = parseInt(event.target.getAttribute('data-time'));
+
     } else if (event.target.classList.contains('custom')) {
+        event.target.setAttribute('disabled', '');
         let tmp = +prompt('Введите количество секунд: ');
         if (tmp <= 0 || Number.isNaN(tmp)) {
             timeEl.parentNode.classList.add('hide');
@@ -86,7 +89,7 @@ function createRandomCircle() {
     const size = getRandomNumber(10, 60);
 
     // получаем размеры доски
-    const {width, height} = board.getBoundingClientRect();
+    const { width, height } = board.getBoundingClientRect();
 
     // размер кружка
     circle.style.width = `${size}px`;
@@ -102,5 +105,5 @@ function createRandomCircle() {
 
 // для геренрации рандомных чисел в диапазоне от min до max
 function getRandomNumber(min, max) {
-   return Math.round(Math.random() * (max - min) + min);
+    return Math.round(Math.random() * (max - min) + min);
 }
