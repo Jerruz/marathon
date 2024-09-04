@@ -28,6 +28,7 @@ timeList.addEventListener('click', event => {
         if (tmp <= 0 || Number.isNaN(tmp)) {
             timeEl.parentNode.classList.add('hide');
             time = 0;
+            finishGame();
         }
         else if (tmp < 10) time = `0${tmp}`
         else time = tmp
